@@ -17,5 +17,5 @@
     },
     "include": [
       "src"
-    ]
+, "babel.config.js"    ]
   }

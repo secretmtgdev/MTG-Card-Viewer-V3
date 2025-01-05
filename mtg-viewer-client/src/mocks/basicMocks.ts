@@ -1,4 +1,4 @@
-import { IDeck, ICard } from "./interfaces";
+import { IDeck, ICard } from "../utils/interfaces";
 
 export const deckMock_default_props: IDeck.DeckViewerProps = {
     name: 'dummyDeck',

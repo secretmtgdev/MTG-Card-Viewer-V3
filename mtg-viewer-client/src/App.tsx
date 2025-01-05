@@ -3,7 +3,7 @@ import { Provider, useSelector } from 'react-redux';
 import './App.css';
 
 import DeckViewer from './components/deck-viewer/DeckViewer';
-import { deckMock_default_props } from './utils/mocks';
+import { deckMock_default_props } from './mocks/basicMocks';
 import { store } from './utils/engagment';
 
 function App() {

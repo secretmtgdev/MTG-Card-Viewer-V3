@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import CardViewer from "../card-viewer/CardViewer";
-import { cardMock_default_cardContent } from "../../utils/mocks";
+import { cardMock_default_cardContent } from "../../mocks/basicMocks";
 import { IDeck } from "../../utils/interfaces";
 import { debounce } from "../../utils/utils";
 import { useDispatch } from "react-redux";

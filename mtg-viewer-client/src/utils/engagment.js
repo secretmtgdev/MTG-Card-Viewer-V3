@@ -1,7 +1,7 @@
 import { legacy_createStore } from 'redux';
 
 const initialState = { clickCount: 0 };
-function reducer(state=initialState, action) {
+export function reducer(state=initialState, action) {
     switch(action.type) {
         case 'INCREMENT':
             return { ...state, clickCount: state.clickCount + 1 }
