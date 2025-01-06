@@ -1,28 +1,34 @@
 import { reducer } from "../../utils/engagment";
 describe('Engagement reducer function', () => {
+    let engagementState;
+    const defaultState = { clickCount: 0 };
+    const action = { type: 'INCREMENT' };
+    
+    beforeEach(() => {
+        engagementState = { clickCount: 0 };
+    });
+
+    afterEach(() => {
+        engagementState = null;
+    });
+
     test('increments the engagement count by 1', () => {
-        const defaultState = { clickCount: 0 };
-        const action = { type: 'INCREMENT' };
-        const engagmentCount = reducer(defaultState, action);
-        expect(engagmentCount.clickCount).toBe(1);
-        expect(engagmentCount.clickCount).not.toBe(0);
+        engagementState = reducer(defaultState, action);
+        expect(engagementState.clickCount).toBe(1);
+        expect(engagementState.clickCount).not.toBe(0);
     });
 
     test('increments the engagement count by 5', () => {
-        const defaultState = { clickCount: 0 };
-        const action = { type: 'INCREMENT' };
-        let engagmentCount;
         for(let i = 0; i < 5; i++) {
-            engagmentCount = reducer(engagmentCount ? engagmentCount : defaultState, action);
+            engagementState = reducer(engagementState ? engagementState : defaultState, action);
         }
 
-        expect(engagmentCount.clickCount).toBe(5);
+        expect(engagementState.clickCount).toBe(5);
     });
 
     test('returns the same state with invalid action', () => {
-        const defaultState = { clickCount: 0 };
-        const action = { type: 'NONSENSE' };
-        expect(reducer(defaultState, action)).toEqual(defaultState);
+        const INVALID_ACTION = { type: 'INVALID_ACTION' };
+        expect(reducer(defaultState, INVALID_ACTION)).toEqual(defaultState);
     });
 
 });
